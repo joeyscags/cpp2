@@ -53,6 +53,37 @@ int Fixed::toInt(void) const
 	return (_fixedPointValue >> _fractionalBits);
 }
 
+// Comparison operators
+bool Fixed::operator>(const Fixed &other) const
+{
+	return (_fixedPointValue > other._fixedPointValue);
+}
+
+bool Fixed::operator<(const Fixed &other) const
+{
+	return (_fixedPointValue < other._fixedPointValue);
+}
+
+bool Fixed::operator>=(const Fixed &other) const
+{
+	return (_fixedPointValue >= other._fixedPointValue);
+}
+
+bool Fixed::operator<=(const Fixed &other) const
+{
+	return (_fixedPointValue <= other._fixedPointValue);
+}
+
+bool Fixed::operator==(const Fixed &other) const
+{
+	return (_fixedPointValue == other._fixedPointValue);
+}
+
+bool Fixed::operator!=(const Fixed &other) const
+{
+	return (_fixedPointValue != other._fixedPointValue);
+}
+
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
 	out << fixed.toFloat();
